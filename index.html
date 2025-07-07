@@ -1,1 +1,453 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blooming Life Adult Family Home</title>
+  <style>
+    body { font-family: 'Quicksand', sans-serif; background:#678b3d;  color: #f9f9f9;  margin: 0; padding: 0; }
+    header {  color: Gold;  padding: 2rem; text-align: center; }
+    header {
+    background: url('bloominglifebothell.jpg') no-repeat center center;
+    background-size: cover; /* fill width */
+    width: 100%;
+    height: 350px; /* adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    border: 4px solid #678b3d;
+    border-radius: 12px; /* optional: rounded corners */
+    overflow: hidden;
+    }
+   
+    .header-text {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+}
+    section {  padding: 2rem;}
+    footer { background: #678b3d; color: #f9f9f9;; text-align: center; padding: 1rem; }
+    .contact-box { background:#678b3d; color: #f9f9f9; padding: 1rem; border-radius: 5px; margin-top: 1rem; }
+    .ellipsis {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    }
+    * {
+    box-sizing: border-box;
+    }
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1rem;
+    }
+    
+    ul li {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+  input, textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid#678b3d;          /* green border */
+    border-radius: 4px;
+    color: #333;                       /* text color */
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+input:focus, textarea:focus {
+  border-color:#678b3d;             /* brighter green on focus */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3); /* soft glow */
+}
+#submit-button:hover,
+#submit-button:focus {
+  background-color: #557a19;
+  box-shadow: 0 0 4px rgba(99, 140, 28, 0.4);
+  outline: none;
+}
+  .slideshow-container {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 4px double#678b3d; /* fancy double-line green border */
+  position: relative;
+  box-sizing: border-box;
+}
+/*   .slideshow-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 4px double#678b3d;
+  box-sizing: border-box;
+} */
+
+.slideshow {
+  position: relative;
+  width: 100%;             /* full width of parent */
+  max-width: 1000px;       /* optional: limit on large screens */
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;     /* keeps consistent height */
+  overflow: hidden;
+  border-radius: 8px;
+}
+    
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/*     --newtabs-- */
+
+    .tab-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  background-color: #f9f9f9;
+  color:#678b3d;
+  border: 1px solid#678b3d;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  margin: 0.25rem;
+  border-radius: 5px;
+  font-weight: bold;
+  flex: 0 0 auto;  
+}
+
+.tab:hover,
+.tab.active {
+  background-color:#678b3d;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+  background-color:#678b3d;
+  padding: 2rem;
+  color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.tab-content.active {
+  display: block;
+}
+/* .contact-info {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color:#678b3d; /* same as body */
+  color: #f9f9f9;
+  text-align: left;
+  border-radius: 8px;
+} */
+.contact-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color:#678b3d;
+  color: #f9f9f9;
+  text-align: left;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+
+ .contact-info p {
+/*   margin: 0.5rem 0;   */
+  margin: 0.25rem;
+ } 
+
+.contact-info a {
+  color: #f9f9f9;
+  text-decoration: underline;
+}
+
+.contact-info iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+/*   #contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color:#678b3d;
+} */
+    #contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Center horizontally */
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  color: #638C1C;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.tab-wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+footer p {
+  font-size: 0.85rem; 
+}
+    
+
+
+  </style>
+ 
+</head>
+<body>
+  <header>   
+      <div class="header-text" style="text-align: center; color: #f9f9f9;">
+      <h1 style="margin-bottom: 0.5rem;">Blooming Life Adult Family Home</h1>
+      <p style="font-size: 1.2rem; font-style: italic; margin-top: 0;"><h4><i>Your Journey. Our Care. A Blooming Life.</i></h4></p></div>
+  </header>
+  <div class="tab-wrapper">
+  <div class="tab-container">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('about')">About Us</button>
+    <button class="tab" onclick="showTab('services')">Services</button>
+    <button class="tab" onclick="showTab('contact')">Contact Us</button>
+    <button class="tab" onclick="showTab('gallery')">Gallery</button>
+  </div>
+  <div id="about" class="tab-content active">
+  <h2>About Us</h2>
+  <p>
+    At <strong>Blooming Life Adult Family Home</strong>, we are committed to delivering personalized care with warmth and compassion. 
+    Our team takes pride in understanding each resident’s unique story and supporting their individual needs.
+  </p>
+  <p>
+    We provide a safe, nurturing environment that feels like home — whether it's helping with daily routines, sharing meaningful conversations, 
+    or offering companionship that uplifts spirits.
+  </p>
+  <p>
+    Our mission is to ensure every resident feels <em>valued, empowered, and genuinely cared for</em>, every step of the way.
+  </p>
+  </div>
+  <div id="services" class="tab-content">
+  <h2>Our Services</h2>
+  <ul style="list-style: none; padding-left: 0;">
+    <li style="margin-bottom: 0.75rem;">
+      <strong>✅ 24/7 Supervision & Care:</strong> Around-the-clock attentive support for safety and peace of mind.
+    </li>
+    <li style="margin-bottom: 0.75rem;">
+      <strong>💊 Medication Management:</strong> Timely, accurate medication assistance by trained staff.
+    </li>
+    <li style="margin-bottom: 0.75rem;">
+      <strong>🍽️ Daily Meals & Housekeeping:</strong> Fresh home-cooked meals and a clean, comfortable environment.
+    </li>
+    <li style="margin-bottom: 0.75rem;">
+      <strong>🎨 Activities & Companionship:</strong> Social and recreational opportunities to foster joy and connection.
+    </li>
+    <li style="margin-bottom: 0.75rem;">
+      <strong>🛏️ Private & Shared Rooms:</strong> Cozy living spaces tailored for comfort and privacy.
+    </li>
+   </ul>
+  </div>
+  <div id="contact" class="tab-content">
+  <h2>Contact Us</h2>
+<!-- Contact Form Start -->
+<form
+  id="contact-form"
+  action="https://formspree.io/f/mblybwgz"
+  method="POST">
+<!--   style="max-width: 500px; color: #333; margin-left: 1rem; padding: 1rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9;>  color:#678b3d;" -->
+ <h3> Drop us a line!</h3>
+     <label style="display: block; margin-bottom: 0.5rem;">
+    Your Name:
+    <input
+      type="text"
+      name="name"
+      required
+      style="max-width: 100%; width: 100%; padding: 0.5rem; margin-top: 0.25rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px;"
+    >
+  </label>
+  <label style="display: block; margin-bottom: 0.5rem;">
+    Your Email:
+    <input
+      type="email"
+      name="email"
+      required
+      style="max-width: 100%; width: 100%; padding: 0.5rem; margin-top: 0.25rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px;"
+    >
+  </label>
+
+  <label style="display: block; margin-bottom: 0.5rem;">
+    Your Message:
+    <textarea
+      name="message"
+      required
+      rows="5"
+      style="max-width: 100%; width: 100%; padding: 0.5rem; margin-top: 0.25rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px;"
+    ></textarea>
+  </label>
+
+  <label style="display: block; margin-bottom: 0.5rem;">
+    Your Phone:
+    <input
+      type="tel"
+      name="phone"
+      pattern="[0-9+\-\s()]*"
+      style="max-width: 100%; width: 100%; padding: 0.5rem; margin-top: 0.25rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px;">
+  </label>
+
+  <!-- You can add more input fields here -->
+   <button
+  id="submit-button"
+  type="submit"
+  style="padding: 0.75rem 1.5rem; background-color:#678b3d; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">Send</button>
+  <p id="form-status" style="margin-top: 1rem; font-weight: bold;"></p>
+  </form>
+  </div>
+ <div id="gallery" class="tab-content">
+ <div class="slideshow-container">
+  <h2 style="text-align: center; color:#678b3d; margin-bottom: 1rem;">Gallery</h2>
+  <div class="slideshow">
+    <img class="slide" src="bloominglifebothell.jpg" alt="Photo 1" />
+    <img class="slide" src="IMG_20250705_140443.jpg" alt="Photo 2" />
+    <img class="slide" src="IMG_20250705_140436.jpg" alt="Photo 3" />
+    <img class="slide" src="IMG_20250705_140428.jpg" alt="Photo 4" />
+    <img class="slide" src="IMG_20250705_140438.jpg" alt="Photo 5" />
+    <img class="slide" src="IMG_20250705_140433.jpg" alt="Photo 6" />
+    <img class="slide" src="IMG_20250705_140440.jpg" alt="Photo 7" />
+    <img class="slide" src="IMG_20250705_141036.jpg" alt="Photo 8" />
+    <!-- Add more images as needed -->
+  </div>
+  </div>
+  </div>
+  <section>
+    <div class="contact-info">
+    <p style="display: flex; align-items: center;"><strong>Phone: </strong> <a href="tel:+14252988051">(425) 298-8051</a></p>
+    <p style="display: flex; align-items: center;"><strong>Email: </strong> <a href="mailto:bloominglifeafh@outlook.com">bloominglifeafh@outlook.com</a></p>
+    <p style="display: flex; align-items: center;"><strong style="flex-shrink: 0; margin-right: 0.5rem;">Address:</strong><span class="ellipsis" style="max-width: 300px; display: inline-block;"> <a href="http://maps.google.com/?q=111 195th Pl SW, Bothell, WA 98012" title="111 195th Pl SW, Bothell, WA 98012">111 195th Pl SW Bothell WA 98012</a></span></p>
+    <p ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.950494529569!2d-122.23711222359483!3d47.821176871210305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900587ef766abb%3A0xb1a46fedcb344b2a!2s111%20195th%20Pl%20SW%2C%20Bothell%2C%20WA%2098012!5e0!3m2!1sen!2sus!4v1751583490611!5m2!1sen!2sus" height="100%" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p> 
+    </div>
+  </section>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-button');
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // prevent default form submission
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Thank you! Your message has been sent. We’ll be in touch with you shortly.";
+        status.style.color =  "#678b3d"
+        form.reset();
+      } else {
+        status.textContent = "❌ Oops! There was a problem. Please try again.";
+        status.style.color = "red";
+      }
+    } catch (error) {
+      status.textContent = "❌ Error connecting to server.";
+      status.style.color = "red";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send";
+  });
+</script>
+   <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  showSlide(currentSlide);
+  setInterval(nextSlide, 3000); // change slide every 3 seconds
+</script>
+
+ </script>
+  <hr style="border: none; border-top: 2px solid #f9f9f9; margin: 2rem auto; width: 80%;">
+  <footer>
+    <p>© 2025 Blooming Life Adult Family Home | All rights reserved</p>
+  </footer>
+</body>
+</html>
