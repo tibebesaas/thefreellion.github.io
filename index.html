@@ -548,6 +548,10 @@ footer p {
 
     if (window.innerWidth <= 768) {
       document.getElementById("menu").classList.remove("show");
+      // 👇 This scrolls to the tab section under the header
+    const tabSection = document.querySelector('.tab-wrapper');
+    if (tabSection) {
+      tabSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
