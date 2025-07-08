@@ -158,10 +158,22 @@ input:focus, textarea:focus {
 
 .tab:hover,
 .tab.active {
-  background-color:#324c5f;
+  background-color: #324c5f;
   color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #f9f9f9;
 }
-
+  .tab.active::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  margin-top: 6px;
+  transition: all 0.3s ease;
+}
 .tab-content {
   display: none;
   background-color:#324c5f;
