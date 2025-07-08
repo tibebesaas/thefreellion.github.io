@@ -272,6 +272,9 @@ footer p {
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .tabs li a {
@@ -283,6 +286,16 @@ footer p {
   display: none;
   font-size: 24px;
   cursor: pointer;
+}
+
+
+  .tabs.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 /* Responsive styles */
@@ -297,6 +310,7 @@ footer p {
     width: 150px;
     padding: 10px;
     border: 1px solid white;
+    z-index: 1000;
   }
 
   .tabs.show {
@@ -325,7 +339,7 @@ footer p {
     <div class="hamburger" onclick="toggleMenu()">
       &#9776; <!-- Unicode for hamburger icon -->
     </div>
-   <div class="tabs">
+   <div class="tabs" id="menu">
     <button class="tab active" onclick="showTab('about')">About Us</button>
     <button class="tab" onclick="showTab('services')">Services</button>
     <button class="tab" onclick="showTab('contact')">Contact Us</button>
