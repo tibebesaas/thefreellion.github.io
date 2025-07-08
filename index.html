@@ -257,13 +257,78 @@ footer p {
   font-size: 0.85rem; 
 }
     
+#########################
+    /* Base styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a2a33;
+  padding: 10px 20px;
+  color: white;
+}
+
+.tabs {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.tabs li a {
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .tabs {
+    display: none;
+    flex-direction: column;
+    background: #1a2a33;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid white;
+  }
+
+  .tabs.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
 
 
   </style>
  
 </head>
 <body>
-  <header>   
+  <header>
+    <nav class="nav">
+    <div class="logo">MySite</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      &#9776; <!-- Unicode for hamburger icon -->
+    </div>
+
+    <ul class="tabs" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+    
       <div class="header-text" style="text-align: center; color: #f9f9f9;">
       <h1 style="margin-bottom: 0.5rem;">Blooming Life Adult Family Home</h1>
       <p style="font-size: 1.2rem; font-style: italic; margin-top: 0;"><h4><i>Your Journey. Our Care. A Blooming Life.</i></h4></p></div>
@@ -454,9 +519,12 @@ footer p {
 
   showSlide(currentSlide);
   setInterval(nextSlide, 3000); // change slide every 3 seconds
-</script>
 
- </script>
+     
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
   <hr style="border: none; border-top: 0.25px solid #f9f9f9; margin: 2rem auto; width: 60%;">
   <footer>
     <p>© 2025 Blooming Life Adult Family Home | All rights reserved</p>
