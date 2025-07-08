@@ -265,36 +265,61 @@ footer p {
   align-items: center;
   background: #1a2a33;
   padding: 10px 20px;
+  position: relative;
   color: white;
 }
 
+/* Structure */
+.nav-left,
+.nav-center,
+.nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left aligns hamburger */
+.nav-left {
+  justify-content: flex-start;
+}
+
+/* Right aligns tabs */
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* Center logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hamburger only visible on mobile */
 .hamburger {
-  display: none;
   font-size: 26px;
   cursor: pointer;
   padding: 10px;
   user-select: none;
-}
-    .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
+/* Tabs default display */
 .tabs {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
-/* Responsive - show hamburger and hide tabs on small screens */
+/* Responsive: show hamburger, hide tabs */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .tabs {
     display: none;
     flex-direction: column;
@@ -310,11 +335,8 @@ footer p {
   .tabs.show {
     display: flex;
   }
-
-  .hamburger {
-    display: block;
-  }
 }
+
 
 
 
@@ -323,20 +345,26 @@ footer p {
 </head>
 <body>
   <header>
-    <nav class="nav">
-    <div class="logo" style="display: flex; align-items: center; font-weight: bold; font-size: 1.2rem;">
-  <img src="favicon.png" alt="BL Logo" style="height: 40px;">
-</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      &#9776; <!-- Unicode for hamburger icon -->
+   <nav class="nav">
+  <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      &#9776;
     </div>
-   <div class="tabs" id="menu">
-    <button class="tab active" onclick="showTab('about')">About Us</button>
-    <button class="tab" onclick="showTab('services')">Services</button>
-    <button class="tab" onclick="showTab('contact')">Contact Us</button>
-    <button class="tab" onclick="showTab('gallery')">Gallery</button>
-   </div>
-   </nav>
+  </div>
+  <div class="nav-center">
+    <div class="logo">
+      <img src="favicon.png" alt="BL Logo" style="height: 40px;" />
+    </div>
+  </div>
+  <div class="nav-right">
+    <div class="tabs" id="menu">
+      <button class="tab active" onclick="showTab('about')">About Us</button>
+      <button class="tab" onclick="showTab('services')">Services</button>
+      <button class="tab" onclick="showTab('contact')">Contact Us</button>
+      <button class="tab" onclick="showTab('gallery')">Gallery</button>
+    </div>
+  </div>
+</nav>
       <div class="header-text" style="text-align: center; color: #f9f9f9;">
       <h1 style="margin-bottom: 0.5rem;">Blooming Life Adult Family Home</h1>
       <p style="font-size: 1.2rem; font-style: italic; margin-top: 0;"><h4><i>Your Journey. Our Care. A Blooming Life.</i></h4></p></div>
