@@ -8,11 +8,11 @@
   <style>
     body { font-family: 'Quicksand', sans-serif; background:#324c5f;  color: #f9f9f9;  margin: 0; padding: 0; }
     header {  color: Gold;  padding: 2rem; text-align: center; }
-    header {
+/*     header {
     background: url('bloominglifebothell.jpg') no-repeat center center;
-    background-size: cover; /* fill width */
+    background-size: cover; 
     width: 100%;
-    height: 350px; /* adjust as needed */
+    height: 350px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     position: relative;
     border: 4px solid #324c5f;
-    border-radius: 12px; /* optional: rounded corners */
+    border-radius: 12px; 
     overflow: hidden;
     }
    
@@ -30,7 +30,52 @@
     bottom: 1rem;
     width: 100%;
     padding: 0 1rem;
+} */
+    header {
+  background: url('bloominglifebothell.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  border: 4px solid #324c5f;
+  border-radius: 12px;
+  overflow: hidden;
 }
+
+.header-text {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.header-text p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-text p {
+    font-size: 0.95rem;
+  }
+}
+
     section {  padding: 2rem;}
     footer { background: #324c5f; color: #f9f9f9;; text-align: center; padding: 1rem; }
     .contact-box { background:#324c5f; color: #f9f9f9; padding: 1rem; border-radius: 5px; margin-top: 1rem; }
@@ -365,7 +410,7 @@ footer p {
     </div>
   </div>
 </nav>
-      <div class="header-text" style="text-align: center; color: #f9f9f9;">
+      <div class="header-text">
       <h1 style="margin-bottom: 0.5rem;">Blooming Life Adult Family Home</h1>
       <p style="font-size: 1.2rem; font-style: italic; margin-top: 0;"><h4><i>Your Journey. Our Care. A Blooming Life.</i></h4></p></div>
   </header>
