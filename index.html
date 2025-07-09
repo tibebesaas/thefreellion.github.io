@@ -380,6 +380,10 @@ footer p {
 
 /* Responsive: show hamburger, hide tabs */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .tabs {
     display: none;
     flex-direction: column;
@@ -399,14 +403,10 @@ footer p {
 
   .tabs.show {
     display: flex;
-    max-height: 500px; /* Adjust as needed */
+    max-height: 500px;
   }
-}
-
-
-
-
-  </style>
+}  
+</style>
  
 </head>
 <body>
