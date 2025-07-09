@@ -383,28 +383,24 @@ footer p {
   .hamburger {
     display: block;
   }
-
- .tabs {
+.tabs {
     display: none;
     flex-direction: column;
     position: absolute;
     left: 10px;
-    top: 60px;
-    width: calc(100% - 20px);
-    background: ransparent;
-    padding: 10px;
-    border: none;
+    top: 55px;
+    width: auto;
+    background: rgba(26, 42, 51, 0.95); /* semi-transparent dark bg */
+    padding: 8px 10px;
+    border-radius: 8px;
     z-index: 1000;
-    border-radius: 6px;
-    transition: max-height 0.3s ease-out;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-height: 0;
-    visibility: hidden;     /* ✅ Add */
-    opacity: 0;             /* ✅ Add */
-    pointer-events: none;   /* ✅ Add */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
-
-
   .tabs.show {
     display: flex;
     max-height: 500px;
