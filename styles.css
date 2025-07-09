@@ -1,7 +1,7 @@
     body { font-family: 'Quicksand', sans-serif; background:#324c5f;  color: #f9f9f9;  margin: 0; padding: 0; }
     header {  color: Gold;  padding: 2rem; text-align: center; }
 /*     header {
-    background: url('bloominglifebothell.jpg') no-repeat center center;
+    background: url('../images/bloominglifebothell.jpg') no-repeat center center;
     background-size: cover; 
     width: 100%;
     height: 350px; 
@@ -24,7 +24,7 @@
     padding: 0 1rem;
 } */
     header {
-  background: url('bloominglifebothell.jpg') no-repeat center center;
+  background: url('../images/bloominglifebothell.jpg') no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 350px;
