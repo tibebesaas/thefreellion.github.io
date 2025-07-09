@@ -90,11 +90,12 @@ function toggleMenu() {
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
+    console.log("Total slides found:", slides.length);
   }
 
   showSlide(currentSlide);
   setInterval(nextSlide, 3000);
-console.log("Total slides found:", slides.length);
+
 
   document.addEventListener("click", function (event) {
   const menu = document.getElementById("menu");
