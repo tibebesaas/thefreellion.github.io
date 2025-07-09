@@ -94,6 +94,8 @@ function toggleMenu() {
 
   showSlide(currentSlide);
   setInterval(nextSlide, 3000);
+console.log("Total slides found:", slides.length);
+
   document.addEventListener("click", function (event) {
   const menu = document.getElementById("menu");
   const hamburger = document.querySelector(".hamburger");
