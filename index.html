@@ -401,21 +401,23 @@ footer p {
     opacity: 0;
     pointer-events: none;
   }
-  .tabs.show {
+    .tabs.show {
     display: flex;
-    max-height: 500px;
-    visibility: visible;    /* ✅ Show it */
-    opacity: 1;             /* ✅ Fade in */
-    pointer-events: auto;   /* ✅ Allow interaction */
+    max-height: 400px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
     transition: opacity 0.3s ease;
-    flex-direction: column;
-   align-items: flex-start; /* ✅ Don't stretch full width */
+    gap: 8px; /* add space between menu items */
+    align-items: flex-start;
   }
 
-.tab {
-  width: auto;             /* ✅ Don't fill parent */
-  min-width: 150px;        /* Optional: to keep buttons neat */
-}
+  .tab {
+    width: auto;
+    min-width: 140px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
 }  
     .hamburger-label {
   font-size: 1rem;
