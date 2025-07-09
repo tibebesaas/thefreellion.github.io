@@ -570,9 +570,25 @@ footer p {
     </div>
   </section>
 <script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  const isOpen = menu.classList.contains("show");
+
+  if (isOpen) {
+    menu.classList.remove("show");
+
+    // Optional: wait for animation before hiding
+    setTimeout(() => {
+      menu.style.visibility = "hidden";
+      menu.style.pointerEvents = "none";
+    }, 300); // Match your CSS transition time
+  } else {
+    menu.classList.add("show");
+    menu.style.visibility = "visible";
+    menu.style.pointerEvents = "auto";
   }
+}
+
 
   function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
