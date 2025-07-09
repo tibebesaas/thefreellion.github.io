@@ -404,11 +404,17 @@ footer p {
     pointer-events: none;   /* ✅ Add */
   }
 
-  .tabs.show {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* ✅ Don't stretch full width */
-}
+
+  tabs.show {
+    display: flex;
+    max-height: 500px;
+    visibility: visible;    /* ✅ Show it */
+    opacity: 1;             /* ✅ Fade in */
+    pointer-events: auto;   /* ✅ Allow interaction */
+    transition: opacity 0.3s ease;
+    flex-direction: column;
+   align-items: flex-start; /* ✅ Don't stretch full width */
+  }
 
 .tab {
   width: auto;             /* ✅ Don't fill parent */
