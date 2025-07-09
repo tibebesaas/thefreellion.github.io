@@ -571,9 +571,23 @@ footer p {
     </div>
   </section>
 <script>
+  // function toggleMenu() {
+  //   document.getElementById("menu").classList.toggle("show");
+  // }
   function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
+  const menu = document.getElementById("menu");
+
+  if (menu.classList.contains("show")) {
+    menu.classList.remove("show");
+    // Delay pointer-events to match animation
+    setTimeout(() => {
+      menu.style.visibility = "hidden";
+    }, 400); // Match transition duration
+  } else {
+    menu.style.visibility = "visible";
+    menu.classList.add("show");
   }
+}
 
   function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
