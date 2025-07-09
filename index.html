@@ -589,28 +589,62 @@ footer p {
   }
 }
 
+//   function showTab(tabId) {
+//     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+//     document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+//     document.getElementById(tabId).classList.add('active');
+
+//     const tabButtons = document.querySelectorAll('.tab');
+//     tabButtons.forEach(btn => {
+//       if (btn.textContent.toLowerCase().includes(tabId)) {
+//         btn.classList.add('active');
+//       }
+//     });
+
+//     if (window.innerWidth <= 768) {
+//   document.getElementById("menu").classList.remove("show");
+//   // Smooth scroll to the header area
+//   const header = document.querySelector("header");
+//   if (header) {
+//     header.scrollIntoView({ behavior: "smooth", block: "start" });
+//   }
+// }
+
+//   }
   function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
+  // Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
 
-    const tabButtons = document.querySelectorAll('.tab');
-    tabButtons.forEach(btn => {
-      if (btn.textContent.toLowerCase().includes(tabId)) {
-        btn.classList.add('active');
-      }
-    });
+  // Show selected content
+  document.getElementById(tabId).classList.add('active');
 
-    if (window.innerWidth <= 768) {
-  document.getElementById("menu").classList.remove("show");
-  // Smooth scroll to the header area
+  // Activate selected tab button
+  document.querySelectorAll('.tab').forEach(btn => {
+    if (btn.textContent.toLowerCase().includes(tabId)) {
+      btn.classList.add('active');
+    }
+  });
+
+  // If mobile, close the dropdown with a delay for animation
+  const menu = document.getElementById("menu");
+  if (window.innerWidth <= 768 && menu.classList.contains("show")) {
+    menu.classList.remove("show");
+
+    // Optional: wait until animation ends before disabling interaction
+    setTimeout(() => {
+      menu.style.visibility = "hidden";
+      menu.style.pointerEvents = "none";
+    }, 400); // Match CSS transition time
+  }
+
+  // Scroll to top of header for mobile
   const header = document.querySelector("header");
-  if (header) {
+  if (header && window.innerWidth <= 768) {
     header.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
-  }
 
   // Contact form handler
   const form = document.getElementById('contact-form');
