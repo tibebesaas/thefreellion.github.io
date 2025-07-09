@@ -650,6 +650,26 @@ footer p {
 
   showSlide(currentSlide);
   setInterval(nextSlide, 3000);
+  document.addEventListener("click", function (event) {
+  const menu = document.getElementById("menu");
+  const hamburger = document.querySelector(".hamburger");
+
+  // If menu is open and click is outside both menu and hamburger, close it
+  if (
+    menu.classList.contains("show") &&
+    !menu.contains(event.target) &&
+    !hamburger.contains(event.target)
+  ) {
+    menu.classList.remove("show");
+
+    // Optional: if you’re using visibility/pointer-events
+    setTimeout(() => {
+      menu.style.visibility = "hidden";
+      menu.style.pointerEvents = "none";
+    }, 400);
+  }
+});
+
 </script>
 
 
