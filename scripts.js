@@ -118,21 +118,20 @@ function toggleMenu() {
 });
 
 
-  document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
-    e.preventDefault();
+document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
+  e.preventDefault();
 
-    // Trigger click on actual tab if needed
-    const tabLink = document.querySelector('a[href="#contact"]');
-    if (tabLink) tabLink.click();
+  showTab('contact'); // <-- Important: activates the tab
 
-    // Scroll to the section after a slight delay (to allow tab activation)
-    setTimeout(() => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 300);
-  });
+  // Scroll to the section after tab activation
+  setTimeout(() => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 300);
+});
+
 
   const toggleBtn = document.getElementById('contact-toggle');
   const menu = document.getElementById('contact-menu');
