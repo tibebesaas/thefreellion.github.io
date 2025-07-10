@@ -118,7 +118,7 @@ function toggleMenu() {
 });
 
 
- document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
+  document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
     e.preventDefault();
 
     // Trigger click on actual tab if needed
@@ -132,34 +132,4 @@ function toggleMenu() {
         contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 300);
-  });
-
-  const toggleBtn = document.getElementById('contact-toggle');
-  const menu = document.getElementById('contact-menu');
-  const widget = document.getElementById('contact-widget');
-
-  // Toggle menu on button click
-  toggleBtn.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!widget.contains(e.target)) {
-      menu.style.display = 'none';
-    }
-  });
-
-  // Close menu on focus change (e.g., tabbing away)
-  document.addEventListener('focusin', (e) => {
-    if (!widget.contains(e.target)) {
-      menu.style.display = 'none';
-    }
-  });
-
-  // Close menu when any menu item is clicked
-  document.querySelectorAll('#contact-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.style.display = 'none';
-    });
   });
