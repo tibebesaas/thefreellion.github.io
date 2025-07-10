@@ -117,8 +117,21 @@ function toggleMenu() {
   }
 });
 
-  document.getElementById('contact-toggle').addEventListener('click', function () {
-    const menu = document.getElementById('contact-menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+
+  document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Trigger click on actual tab if needed
+    const tabLink = document.querySelector('a[href="#contact"]');
+    if (tabLink) tabLink.click();
+
+    // Scroll to the section after a slight delay (to allow tab activation)
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
   });
+
 
