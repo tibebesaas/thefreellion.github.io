@@ -118,14 +118,24 @@ function toggleMenu() {
 });
 
 
-  document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('contact-toggle');
+  const menu = document.getElementById('contact-menu');
+  const widget = document.getElementById('contact-widget');
+  const contactLink = document.querySelector('#contact-menu a[href="#contact"]');
+
+  // Safeguard if elements are missing
+  if (!toggleBtn || !menu || !widget || !contactLink) return;
+
+  // Smooth scroll and tab switch logic
+  contactLink.addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Trigger click on actual tab if needed
+    // Click tab if needed
     const tabLink = document.querySelector('a[href="#contact"]');
-    if (tabLink) tabLink.click();
+    if (tabLink && tabLink !== this) tabLink.click();
 
-    // Scroll to the section after a slight delay (to allow tab activation)
+    // Scroll into view after short delay
     setTimeout(() => {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
@@ -134,36 +144,30 @@ function toggleMenu() {
     }, 300);
   });
 
-  const toggleBtn = document.getElementById('contact-toggle');
-  const menu = document.getElementById('contact-menu');
-  const widget = document.getElementById('contact-widget');
-
-  // Toggle menu on button click
-  toggleBtn.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  // Toggle contact menu visibility
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent bubbling to document
+    menu.classList.toggle('visible'); // Use CSS class
   });
 
-  // Close menu when clicking outside
+  // Hide menu on outside click
   document.addEventListener('click', (e) => {
     if (!widget.contains(e.target)) {
-      menu.style.display = 'none';
+      menu.classList.remove('visible');
     }
   });
 
-  // Close menu on focus change (e.g., tabbing away)
+  // Hide menu on focus change (e.g., tabbing away)
   document.addEventListener('focusin', (e) => {
     if (!widget.contains(e.target)) {
-      menu.style.display = 'none';
+      menu.classList.remove('visible');
     }
   });
 
-  // Close menu when any menu item is clicked
+  // Hide menu when any link is clicked
   document.querySelectorAll('#contact-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      menu.style.display = 'none';
+      menu.classList.remove('visible');
     });
   });
-
-
-
-
+});
