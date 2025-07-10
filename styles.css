@@ -449,5 +449,9 @@ footer p {
 #contact-menu {
   transition: all 0.3s ease;
 }
+#contact-toggle i {
+  font-size: 28px;
+}
+
 
 
