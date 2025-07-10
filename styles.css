@@ -232,17 +232,16 @@ textarea:focus {
 	display: block;
 }
 
-/* .contact-info {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color:#324c5f; 
+.contact-info {
+max-width: 800px;
+margin: 2rem auto;
+padding: 1rem;
+background-color:#324c5f; 
 color: #f9f9f9;
 text-align: left;
 border-radius: 8px;
 }
-
-*/ 
+ 
 .contact-info {
 	width: 100%;
 	display: flex;
