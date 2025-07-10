@@ -189,15 +189,6 @@ input:focus, textarea:focus {
 .tab-content.active {
   display: block;
 }
-/* .contact-info {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color:#324c5f; /* same as body */
-  color: #f9f9f9;
-  text-align: left;
-  border-radius: 8px;
-} */
 .contact-info {
   width: 100%;
   display: flex;
