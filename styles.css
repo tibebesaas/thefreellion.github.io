@@ -358,34 +358,38 @@ footer p {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    cursor: pointer;
+    z-index: 1100;
   }
-.tabs {
-    display: none;
+
+  .hamburger-container {
+    position: relative; /* Important for dropdown positioning */
+  }
+
+  .tabs {
+    display: flex; /* default display if using JS toggle instead of display: none */
     flex-direction: column;
     position: absolute;
-    left: 10px;
-    top: 55px;
-    width: auto;
-    background: transparent;
-    padding: 8px 10px;
+    top: 100%; /* opens directly below hamburger */
+    left: 0;
+    right: auto;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 8px 12px;
     border-radius: 8px;
     z-index: 1000;
-    transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-height: 0;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    transition: all 0.3s ease;
   }
-    .tabs.show {
-    display: flex;
+
+  .tabs.show {
     max-height: 400px;
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.3s ease;
-    gap: 8px; /* add space between menu items */
-    align-items: flex-start;
   }
 
   .tab {
@@ -393,15 +397,25 @@ footer p {
     min-width: 140px;
     padding: 8px 12px;
     font-size: 0.95rem;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    transition: background 0.2s ease;
   }
-}  
-    .hamburger-label {
-  font-size: 1rem;
-  margin-left: 8px;
-  font-weight: 500;
-  vertical-align: middle;
-  color: white;
+
+  .tab:hover {
+    background: #f0f0f0;
+  }
+
+  .hamburger-label {
+    font-size: 1rem;
+    margin-left: 8px;
+    font-weight: 500;
+    vertical-align: middle;
+    color: white;
+  }
 }
+
 
 @media (min-width: 769px) {
   .hamburger-label {
