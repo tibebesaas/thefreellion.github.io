@@ -134,7 +134,6 @@ function toggleMenu() {
     }, 300);
   });
 
-<script>
   const toggleBtn = document.getElementById('contact-toggle');
   const menu = document.getElementById('contact-menu');
   const widget = document.getElementById('contact-widget');
@@ -164,7 +163,7 @@ function toggleMenu() {
       menu.style.display = 'none';
     });
   });
-</script>
+
 
 
 
