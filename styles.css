@@ -446,4 +446,8 @@ footer p {
 #contact-menu a:last-child {
   border-bottom: none;
 }
+#contact-menu {
+  transition: all 0.3s ease;
+}
+
 
