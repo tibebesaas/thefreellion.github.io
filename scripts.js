@@ -136,16 +136,23 @@ document.querySelector('#contact-menu a[href="#contact"]').addEventListener('cli
   const toggleBtn = document.getElementById('contact-toggle');
   const menu = document.getElementById('contact-menu');
   const widget = document.getElementById('contact-widget');
+  const icon = toggleBtn.querySelector('.icon')
 
   // Toggle menu on button click
-  toggleBtn.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
+ toggleBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent outside click handler from closing immediately
+
+  const isVisible = menu.style.display === 'block';
+
+  menu.style.display = isVisible ? 'none' : 'block';
+  icon.textContent = isVisible ? '💬' : '✖'; // Toggle icon
+});
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!widget.contains(e.target)) {
       menu.style.display = 'none';
+      icon.textContent = '💬'; // Reset icon when menu is closed
     }
   });
 
@@ -153,6 +160,7 @@ document.querySelector('#contact-menu a[href="#contact"]').addEventListener('cli
   document.addEventListener('focusin', (e) => {
     if (!widget.contains(e.target)) {
       menu.style.display = 'none';
+      icon.textContent = '💬';
     }
   });
 
@@ -160,5 +168,6 @@ document.querySelector('#contact-menu a[href="#contact"]').addEventListener('cli
   document.querySelectorAll('#contact-menu a').forEach(link => {
     link.addEventListener('click', () => {
       menu.style.display = 'none';
+      icon.textContent = '💬';
     });
   });
