@@ -244,8 +244,8 @@ textarea:focus {
 }
 
 
-.contact-info p {
-	/*   margin: 0.5rem 0;   */
+/* .contact-info p {
+
 	margin: 0.25rem;
 }
 
@@ -260,7 +260,7 @@ textarea:focus {
 	border: 0;
 	border-radius: 8px;
 	margin-top: 1rem;
-}
+} */
 
 #contact-form {
 	width: 100%;
