@@ -118,24 +118,14 @@ function toggleMenu() {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('contact-toggle');
-  const menu = document.getElementById('contact-menu');
-  const widget = document.getElementById('contact-widget');
-  const contactLink = document.querySelector('#contact-menu a[href="#contact"]');
-
-  // Safeguard if elements are missing
-  if (!toggleBtn || !menu || !widget || !contactLink) return;
-
-  // Smooth scroll and tab switch logic
-  contactLink.addEventListener('click', function (e) {
+  document.querySelector('#contact-menu a[href="#contact"]').addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Click tab if needed
+    // Trigger click on actual tab if needed
     const tabLink = document.querySelector('a[href="#contact"]');
-    if (tabLink && tabLink !== this) tabLink.click();
+    if (tabLink) tabLink.click();
 
-    // Scroll into view after short delay
+    // Scroll to the section after a slight delay (to allow tab activation)
     setTimeout(() => {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
@@ -143,31 +133,3 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 300);
   });
-
-  // Toggle contact menu visibility
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent bubbling to document
-    menu.classList.toggle('visible'); // Use CSS class
-  });
-
-  // Hide menu on outside click
-  document.addEventListener('click', (e) => {
-    if (!widget.contains(e.target)) {
-      menu.classList.remove('visible');
-    }
-  });
-
-  // Hide menu on focus change (e.g., tabbing away)
-  document.addEventListener('focusin', (e) => {
-    if (!widget.contains(e.target)) {
-      menu.classList.remove('visible');
-    }
-  });
-
-  // Hide menu when any link is clicked
-  document.querySelectorAll('#contact-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('visible');
-    });
-  });
-});
