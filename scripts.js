@@ -116,3 +116,9 @@ function toggleMenu() {
     }, 400);
   }
 });
+
+  document.getElementById('contact-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('contact-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+
