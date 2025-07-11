@@ -343,40 +343,49 @@ footer p {
 
 /* Responsive: show hamburger, hide tabs */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+ .hamburger-wrapper {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+}
 
-  .tabs {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    left: 10px;
-    top: 55px;
-    width: auto;
-    background: transparent;
-    padding: 8px 10px;
-    border: none;
-    z-index: 1000;
-    border-radius: 10px;
-    transition:  all 0.3s ease;
-    overflow: hidden;
-    max-height: 0;
-    visibility: hidden;     /* ✅ Add */
-    opacity: 0;             /* ✅ Add */
-    pointer-events: none;   /* ✅ Add */
-  }
+.hamburger {
+  font-size: 26px;
+  background-color: #1a2a33;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  z-index: 1002;
+}
 
-   .tabs.show {
-    display: flex;
-    max-height: 400px;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.3s ease;
-    gap: 8px; /* add space between menu items */
-    align-items: flex-start;
-  }
+.tabs {
+  position: absolute;
+  top: 100%; /* appears below hamburger */
+  left: 0;
+  background: #1a2a33;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: max-content;
+}
+
+.tabs.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
   .tab {
     width: auto;
