@@ -18,11 +18,11 @@
 <body>
   <header>
 <nav class="nav">
-  <div class="nav-left">
+<!--   <div class="nav-left">
     <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
       &#9776;<span class="hamburger-label"><strong>Menu</strong></span>
     </div>
-  </div>
+  </div> -->
   <div class="nav-center">
     <div class="logo">
       <img src="images/favicon.png" alt="BL Logo" style="height: 40px;" />
@@ -32,7 +32,12 @@
     <!-- Use this only to space things correctly on desktop -->
   </div>
 </nav>
-
+<div class="hamburger-wrapper" style="position: relative;">
+  <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      &#9776;<span class="hamburger-label"><strong>Menu</strong></span>
+    </div>
+  </div>
 <!-- ✅ Move #menu tabs outside of nav, directly under it -->
 <div class="tabs" id="menu">
   <button class="tab active" onclick="showTab('about')">About Us</button>
@@ -40,7 +45,7 @@
   <button class="tab" onclick="showTab('contact')">Contact Us</button>
   <button class="tab" onclick="showTab('gallery')">Gallery</button>
 </div>
-
+</div>
       <div class="header-text">
       <h1 style="margin-bottom: 0.5rem;">Blooming Life Adult Family Home</h1>
       <p style="font-size: 1.2rem; font-style: italic; margin-top: 0;"><h4><i>Your Journey. Our Care. A Blooming Life.</i></h4></p></div>
