@@ -107,18 +107,6 @@ input:focus, textarea:focus {
   position: relative;
   box-sizing: border-box;
 }
-/*   .slideshow-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 12px;
-  background-color: #f9f9f9;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 4px double#324c5f;
-  box-sizing: border-box;
-} */
-
 .slideshow {
   position: relative;
   width: 100%;             /* full width of parent */
@@ -240,16 +228,6 @@ input:focus, textarea:focus {
   border-radius: 8px;
   margin-top: 1rem;
 }
-/*   #contact-form {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 1rem;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  color:#324c5f;
-} */
     #contact-form {
   width: 100%;
   max-width: 600px;
@@ -365,6 +343,7 @@ footer p {
   position: absolute;
   top: 100%; /* appears below hamburger */
   left: 10px;
+  top: 40px;
   background: transparent;
   padding: 10px;
   border-radius: 10px;
@@ -378,22 +357,6 @@ footer p {
   flex-direction: column;
   gap: 10px;
   width: max-content;
-/*     display: none;
-    flex-direction: column;
-    position: absolute;
-    left: 10px; */
-    top: 40px;
-/*     width: auto;
-    background: transparent;
-    padding: 8px 10px;
-    border: none;
-    z-index: 1000;
-    border-radius: 10px;
-    transition:  all 0.3s ease;
-    overflow: hidden;
-    max-height: 0;
-    visibility: hidden;     
-    pointer-events: none;    */
 }
 
 .tabs.show {
