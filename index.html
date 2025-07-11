@@ -41,12 +41,17 @@
   <button class="tab" onclick="showTab('gallery')">Gallery</button>
 </div> -->
     <div class="hamburger-wrapper">
-  <div class="hamburger" onclick="toggleMenu()">☰ <span class="hamburger-label">Menu</span></div>
-  <div id="menu" class="tabs">
-    <div class="tab" onclick="showTab('home')">Home</div>
-    <div class="tab" onclick="showTab('about')">About</div>
-    <div class="tab" onclick="showTab('contact')">Contact</div>
-  </div>
+   <div class="nav-left">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      &#9776;<span class="hamburger-label"><strong>Menu</strong></span>
+    </div>
+  </div> 
+  <div class="tabs" id="menu">
+  <button class="tab active" onclick="showTab('about')">About Us</button>
+  <button class="tab" onclick="showTab('services')">Services</button>
+  <button class="tab" onclick="showTab('contact')">Contact Us</button>
+  <button class="tab" onclick="showTab('gallery')">Gallery</button>
+</div>
 </div>
 
 
