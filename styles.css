@@ -347,27 +347,28 @@ footer p {
     display: block;
   }
 
-  .tabs {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    left: 10px;
-    top: 55px;
-    width: auto;
-    background: transparent;
-    padding: 8px 10px;
-    border: none;
-    z-index: 1000;
-    border-radius: 10px;
-    transition:  all 0.3s ease;
-    overflow: hidden;
-    max-height: 0;
-    visibility: hidden;     /* ✅ Add */
-    opacity: 0;             /* ✅ Add */
-    pointer-events: none;   /* ✅ Add */
-  }
+.tabs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 10px;
+  top: 55px;
+  background: #1a2a33;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000;
+  gap: 8px;
+  align-items: flex-start;
+  transform: translateY(-20px);   /* initial off-screen position */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 
    .tabs.show {
+    transform: translateY(0); 
     display: flex;
     max-height: 400px;
     visibility: visible;
