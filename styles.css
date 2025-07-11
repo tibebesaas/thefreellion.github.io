@@ -343,10 +343,15 @@ footer p {
 
 /* Responsive: show hamburger, hide tabs */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
+  .hamburger-wrapper {
+    position: relative;
   }
 
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 1001;
+  }
 .tabs {
   display: flex;
   flex-direction: column;
