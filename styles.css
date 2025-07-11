@@ -430,3 +430,15 @@ footer p {
 #contact-toggle i {
   font-size: 28px;
 }
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  color: #324c5f;
+  margin-bottom: 1rem;
+}
+
+.why-choose-us ul li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
